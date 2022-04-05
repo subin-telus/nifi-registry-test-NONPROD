@@ -1,4 +1,4 @@
 flows:
-  00ed840c-3886-4c6e-bf79-482ecd9f360e: {ver: 1, file: flow01.snapshot}
+  00ed840c-3886-4c6e-bf79-482ecd9f360e: {ver: 2, file: flow01.snapshot}
 layoutVer: 1
 bucketId: da883eb2-0921-4564-9d84-201d779ffcf0
