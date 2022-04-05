@@ -35,6 +35,36 @@
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "6020af12-1ece-3f0f-99b6-86f9a8cb8720",
+        "id" : "96b2ad25-739f-353c-9056-0737d20549e0",
+        "name" : "PutKafka",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "6020af12-1ece-3f0f-99b6-86f9a8cb8720",
+      "identifier" : "3e782a2c-4d4d-3c2d-8900-55274e8160e5",
+      "labelIndex" : 1,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "6020af12-1ece-3f0f-99b6-86f9a8cb8720",
+        "id" : "88852e2f-ed15-3582-8e51-304f665e591b",
+        "name" : "LogAttribute",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
     } ],
     "controllerServices" : [ ],
     "funnels" : [ ],
@@ -405,6 +435,120 @@
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
       "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-kafka-0-8-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.9.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "6020af12-1ece-3f0f-99b6-86f9a8cb8720",
+      "identifier" : "96b2ad25-739f-353c-9056-0737d20549e0",
+      "name" : "PutKafka",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 779.9666748046875,
+        "y" : 515.5
+      },
+      "properties" : {
+        "Async Batch Size" : "16384",
+        "Communications Timeout" : "30 secs",
+        "Compression Codec" : "none",
+        "Delivery Guarantee" : "0",
+        "Max Buffer Size" : "5 MB",
+        "Max Record Size" : "1 MB"
+      },
+      "propertyDescriptors" : {
+        "Async Batch Size" : {
+          "displayName" : "Batch Size",
+          "identifiesControllerService" : false,
+          "name" : "Async Batch Size",
+          "sensitive" : false
+        },
+        "Client Name" : {
+          "displayName" : "Client Name",
+          "identifiesControllerService" : false,
+          "name" : "Client Name",
+          "sensitive" : false
+        },
+        "Communications Timeout" : {
+          "displayName" : "Communications Timeout",
+          "identifiesControllerService" : false,
+          "name" : "Communications Timeout",
+          "sensitive" : false
+        },
+        "Compression Codec" : {
+          "displayName" : "Compression Codec",
+          "identifiesControllerService" : false,
+          "name" : "Compression Codec",
+          "sensitive" : false
+        },
+        "Delivery Guarantee" : {
+          "displayName" : "Delivery Guarantee",
+          "identifiesControllerService" : false,
+          "name" : "Delivery Guarantee",
+          "sensitive" : false
+        },
+        "Kafka Key" : {
+          "displayName" : "Kafka Key",
+          "identifiesControllerService" : false,
+          "name" : "Kafka Key",
+          "sensitive" : false
+        },
+        "Known Brokers" : {
+          "displayName" : "Known Brokers",
+          "identifiesControllerService" : false,
+          "name" : "Known Brokers",
+          "sensitive" : false
+        },
+        "Max Buffer Size" : {
+          "displayName" : "Max Buffer Size",
+          "identifiesControllerService" : false,
+          "name" : "Max Buffer Size",
+          "sensitive" : false
+        },
+        "Max Record Size" : {
+          "displayName" : "Max Record Size",
+          "identifiesControllerService" : false,
+          "name" : "Max Record Size",
+          "sensitive" : false
+        },
+        "Message Delimiter" : {
+          "displayName" : "Message Delimiter",
+          "identifiesControllerService" : false,
+          "name" : "Message Delimiter",
+          "sensitive" : false
+        },
+        "Partition" : {
+          "displayName" : "Partition",
+          "identifiesControllerService" : false,
+          "name" : "Partition",
+          "sensitive" : false
+        },
+        "Queue Buffering Max Time" : {
+          "displayName" : "Queue Buffering Max Time",
+          "identifiesControllerService" : false,
+          "name" : "Queue Buffering Max Time",
+          "sensitive" : false
+        },
+        "Topic Name" : {
+          "displayName" : "Topic Name",
+          "identifiesControllerService" : false,
+          "name" : "Topic Name",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.kafka.PutKafka",
       "yieldDuration" : "1 sec"
     } ],
     "remoteProcessGroups" : [ ],
